@@ -1,0 +1,436 @@
+@media (min-width: 481px) and (max-width: 1023px){
+    body{
+        background-image: linear-gradient(rgb(10, 44, 68 )50%, rgb(0, 0, 0));
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .wrapper{
+        width: 90%;
+        max-width: 81.25rem;
+        margin: 0 auto;
+        max-width: 480px; 
+    }
+
+    .header{    
+        width: 100%;
+        padding: 1rem 0;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: rgba(0, 4, 41, 0.226);
+        backdrop-filter: blur(1rem);
+        z-index: 1;
+
+        &__logo{
+            letter-spacing: .8rem;
+            font-size: 2em;
+            color:  $color-efectos;
+        }
+
+        &__span{
+            display: block;
+            cursor: pointer;
+        }
+
+        &__nav{
+            width: 100%;
+            margin-top: 1rem;
+
+            &-wrapper{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+        }
+
+        &__ul{ 
+            display: none;   
+                
+            &.show{
+                display: block;
+            }  
+        }
+
+        &__li{
+            display: block;
+        }
+
+        &__a{
+            display: block;
+            padding: 0.5rem 1rem;
+            letter-spacing: .15rem;
+            color: $color-fuente;
+            padding: 0.5rem 0;
+            &:hover{
+                border-bottom: solid 2px $color-efectos;
+                color: $color-efectos;
+            }
+        }
+
+        &__buton{
+            background-color: $color-efectos;
+            box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.226);
+            padding: 0.7rem 2rem;
+            letter-spacing: .1rem;
+            font-weight: 500;
+            border: none;
+            border-radius: 1rem;
+            margin: 1rem 0;
+        }
+    }
+
+    .main{
+        &__1{
+            padding-top: 16.5rem;
+        }
+
+        &__2{
+            padding-top: 8.5rem; 
+        }
+
+        &__3{
+            padding-top: 8.5rem;
+        }
+
+        &__4{
+            padding-top: 8.5rem;
+        }
+
+        &__5{
+            padding-top: 8.5rem;
+        }
+    }
+
+    .ppal{
+        width: 100%;
+        margin-bottom: 5rem;
+        padding: 2rem 0;
+        align-items: center;
+
+        &__h2{
+            @include presentacion($color-efectos, center);
+            font-weight: 700;
+            font-size: 40px;
+            margin: 1rem 0;
+
+            animation-name: h2-index;
+            animation-iteration-count: 1;
+            animation-duration: 6s;
+            animation-delay: 0s;
+        
+            @keyframes h2-index{
+                from{
+                    opacity: 0;
+                }
+            
+                to{
+                    opacity: 100;
+                }   
+            }
+        }
+
+        &__h3{
+            @include presentacion($color-fuente, center);
+            font-weight: 500;
+            font-size: 30px;
+            animation-name: h3-index;
+            animation-iteration-count: 1;
+            animation-duration: 9s;
+            animation-delay: 0s;
+        
+            @keyframes h3-index{
+                from{
+                    opacity: 0;
+                }
+            
+                to{
+                    opacity: 100;
+                }
+            }
+        }
+        &__h4{
+            @include presentacion($color-fuente, center);
+            font-weight: 300;
+            font-size: 20px;
+
+            animation-name: h1-index;
+            animation-iteration-count: 1;
+            animation-duration: 3s;
+            animation-delay: 0ms;
+        
+            @keyframes h1-index{
+                from{
+                    opacity: 0;
+                }
+            
+                to{
+                    opacity: 100;
+                }
+            }
+        }
+    }
+
+    .rrss{
+        .wrapper{
+            width: 45%;
+        }
+
+        &__ul{
+            @include flex (flex, row nowrap, space-around, center);
+        }
+
+        &__li{
+            margin: 1em;
+        }
+
+        animation-name: redes-index;
+        animation-iteration-count: 1;
+        animation-duration: 2s;
+        animation-delay: 0s;
+
+        @keyframes redes-index{
+            from{
+                transform: translateY(200px);
+                opacity: 0;
+            }
+            
+            to{
+            transform: translateY(0);
+                opacity: 100;
+            }
+        }
+    }
+
+    .descripcion{
+
+        .wrapper{
+            @include flex (flex, column, space-between, center);
+        }
+
+        &__subtitulo{
+            @include subtitulo($margin: 2rem 0rem 2rem 4rem,$size: 2.6em );
+        }
+        &__p{
+            width: 85%;
+            margin-bottom: 2rem;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.096);
+            backdrop-filter: blur(1rem);
+            border-radius: 1rem;
+            font-size: 1em;
+            text-align: center;
+        }
+    }
+
+    .habilidades{
+
+        .wrapper{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.096);
+            backdrop-filter: blur(1rem);
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        &__subtitulo{
+            @include subtitulo($margin: 2rem 0rem 2rem 3rem,$size: 2.6em);
+        }
+        &__iconos{
+            @include flex(flex,column,center,center);
+            margin: 1rem;
+
+            &-span{
+                margin: .5rem 0;
+            }
+        }
+    }
+
+    .portafolio{
+ 
+        .wrapper{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        &__subtitulo{
+            @include subtitulo($margin: 2rem 0rem 2rem 4rem,$size: 2.4em);
+        }
+    }
+
+    .card{
+        display: flex;
+        position: relative;
+        width: 18rem;
+        height: 28rem;
+        margin: 2rem 2rem;
+
+        &:hover &__front{
+            transform: perspective(37.5rem) rotateY(180deg);
+        }
+
+        &:hover &__back{
+            transform: perspective(37.5rem) rotateY(360deg);
+        }
+
+        &__face{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: .5s;
+        }
+
+        &__front{
+            transform: perspective(37.5rem) rotateY(0deg);
+            box-shadow: 0 .31rem .64rem rgb(0, 0, 0);
+
+            &-img{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: scale-down;
+            }
+
+            &-h3{
+                background-color: rgba(5,38,80,.4);
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 2.8rem;
+                line-height: 2.8rem;
+                color: $color-fuente;
+                text-align: center;
+                letter-spacing: .09em;
+            }
+        }
+
+        &__back{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            transform: perspective(37.5rem) rotateY(180deg);
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(1rem);
+            padding: .93rem;
+            color: rgb(255, 255, 255);
+            box-shadow: 0 .31rem .64rem rgb(0, 0, 0);
+            
+            &-h3{
+                margin: .5rem 0;
+                font-size: 2em;
+                letter-spacing: .09em;
+                color: $color-fuente; 
+            }
+
+            &-p{
+                font-size: 1.1em;
+                letter-spacing: .1em;
+                color: $color-fuente;
+                
+            }
+            
+            &-button{
+                width: 7rem;
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+                border-radius: 1rem;
+                flex-flow: row;
+                background-color: $color-efectos;
+            }
+
+            &-botones{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between
+            }
+        }
+    }
+
+    .contacto{
+        &__subtitulo{
+            @include subtitulo($margin: 2rem 0rem 2rem 4rem,$size: 2.4em);
+        }
+
+        &__input{
+            width: 60%;
+            border: none;
+            margin: 2rem auto ;
+            border-bottom: 2px solid $color-efectos;
+            padding: 10px 20px;
+            color: rgb(255, 255, 255);
+            
+            &::placeholder{
+                color: $color-fuente;
+            }
+        }
+
+        &__textarea{
+            width: 60%;
+            min-height: 9.5rem;
+            margin: 2rem auto ;
+            border: 2px solid $color-efectos;
+            border-radius: 1rem;
+            padding: 10px 20px;
+            color: rgb(255, 255, 255);
+
+            &::placeholder{
+                color: $color-fuente;
+            }
+        }
+
+        &__submit{
+            background-color: $color-efectos;
+            margin: 2rem auto;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 1rem;
+        }
+    }
+
+    .footer__index{
+        padding:1rem;
+        @include flex (flex, nowrap, flex-end,center);
+        font-size: .8em;
+
+        &__index-copy{
+            font-size: 0.1em;
+        }
+    }
+
+    .footer{
+        @include flex (flex, column, center,center);
+        font-size: .8em;
+
+        &__rrss{
+            @include flex(flex, row nowrap,center,center);
+        }
+
+        &__li{
+            margin: 1rem;
+            font-size: 1em;
+        }
+
+        &__a{
+            padding: 1rem 0;
+            &:hover{
+                color: $color-efectos;
+            }
+        }
+        
+        &__copy{
+            padding: 0.5rem 0;
+            font-size: 1em;
+        }
+    }
+}
